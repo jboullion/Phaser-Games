@@ -2,7 +2,7 @@ var DEBUG = 1;
 
 //setup screen
 var screen = {};
-screen.width = 1600;
+screen.width = 1200;
 screen.height = 800;
 screen.centerX = screen.width / 2;
 screen.centerY = screen.height / 2;
@@ -26,8 +26,11 @@ scenes.states[IDLEKEY] ='idle';
 var characters = {};
 characters.dude = {};
 characters.dude.sprite = null;
-characters.dude.speed = 4;
+characters.dude.speed = 6;
 characters.dude.isJumping = false;
+characters.dude.jumpTimer = 0;
+
+var playerOne = null;
 
 /**
  * Use for debugging information
