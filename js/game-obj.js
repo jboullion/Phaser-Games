@@ -1,5 +1,13 @@
 var DEBUG = 1;
 
+//setup screen
+var screen = {};
+screen.width = 1600;
+screen.height = 800;
+screen.centerX = screen.width / 2;
+screen.centerY = screen.height / 2;
+
+//setup scenes
 var scenes = {},
 	MENUKEY = Phaser.Keyboard.ONE,
 	CHARKEY = Phaser.Keyboard.TWO,
@@ -14,7 +22,12 @@ scenes.states[LVLKEY] ='levelSelect';
 scenes.states[FIGHTKEY] ='fight';
 scenes.states[IDLEKEY] ='idle';
 
-
+//setup characters
+var characters = {};
+characters.dude = {};
+characters.dude.sprite = null;
+characters.dude.speed = 4;
+characters.dude.isJumping = false;
 
 /**
  * Use for debugging information

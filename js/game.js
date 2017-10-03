@@ -1,4 +1,4 @@
-var game = new Phaser.Game(1440,900,Phaser.AUTO);
+var game = new Phaser.Game(screen.width,screen.height,Phaser.AUTO);
 
 game.state.add('menu', scenes.menu);
 game.state.add('characterSelect', scenes.characterSelect);
