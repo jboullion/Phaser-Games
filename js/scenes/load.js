@@ -32,8 +32,7 @@ scenes.load.prototype = {
 		terrain.road = map.createLayer('road');
 		terrain.rocks = map.createLayer('rocks');
 
-		map.setCollisionBetween(11,22, true, 'rocks');
-
+		map.setCollisionBetween(5,22, true, 'rocks');
 
 		playerOne = characters.dude;
 		//setup our dude
@@ -54,7 +53,7 @@ scenes.load.prototype = {
 	},
 	update: function(){
 		game.physics.arcade.collide(playerOne.sprite, terrain.rocks, function(){
-			debugLog('Hitting Rock');
+			//debugLog('Hitting Rock');
 		});
 
 		if(game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)){
