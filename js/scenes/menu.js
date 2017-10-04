@@ -1,18 +1,17 @@
 scenes.menu = function(){};
 scenes.menu.prototype = {
 	preload: function(){
-		//game.load.image('dude', 'assets/sprites/dude.png');
 		game.load.spritesheet('dude', 'assets/spritesheets/dudeSheet.png', 159, 250);
 		game.load.image('background', 'assets/backgrounds/background1.png');
 	},
 	create: function(){
+
 		//init the game physics. Must be one of the first CREATE functions called
 		game.physics.startSystem(Phaser.Physics.ARCADE);
 		game.physics.arcade.gravity.y = 2000;
 
 		playerOne = characters.dude;
 
-		debugLog('menu');
 		addStateListeners();
 
 		//force the game to fit all scales
@@ -39,6 +38,7 @@ scenes.menu.prototype = {
 
 	},
 	update: function(){
+
 		if(game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)){
 			playerOne.sprite.x += playerOne.speed;
 			//turn around when walking

@@ -7,4 +7,4 @@ game.state.add('fight', scenes.fight);
 game.state.add('idle', scenes.idle);
 game.state.add('load', scenes.load);
 
-game.state.start('menu');
+game.state.start('load');

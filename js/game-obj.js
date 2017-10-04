@@ -10,10 +10,11 @@ screen.centerY = screen.height / 2;
 //setup scenes
 var scenes = {},
 	MENUKEY = Phaser.Keyboard.ONE,
-	CHARKEY = Phaser.Keyboard.TWO,
+	LOADKEY = Phaser.Keyboard.TWO;
 	LVLKEY = Phaser.Keyboard.THREE,
 	FIGHTKEY = Phaser.Keyboard.FOUR,
-	IDLEKEY = Phaser.Keyboard.FIVE;
+	IDLEKEY = Phaser.Keyboard.FIVE,
+	CHARKEY = Phaser.Keyboard.SIX,
 
 scenes.states = [];
 scenes.states[MENUKEY] ='menu';
@@ -21,6 +22,7 @@ scenes.states[CHARKEY] ='characterSelect';
 scenes.states[LVLKEY] ='levelSelect';
 scenes.states[FIGHTKEY] ='fight';
 scenes.states[IDLEKEY] ='idle';
+scenes.states[LOADKEY] ='load';
 
 //setup characters
 var characters = {};
@@ -29,9 +31,11 @@ characters.dude.sprite = null;
 characters.dude.speed = 6;
 characters.dude.isJumping = false;
 characters.dude.jumpTimer = 0;
+characters.dude.tilespeed = 500;
 
 var playerOne = null;
 
+var terrain = {};
 /**
  * Use for debugging information
  */
@@ -45,6 +49,7 @@ function debugLog(data){
  * Change the game state
  */
 function changeState(event, stateNum){
+	debugLog('Change State: '+scenes.states[stateNum]);
 	game.state.start(scenes.states[stateNum]);
 }
 
