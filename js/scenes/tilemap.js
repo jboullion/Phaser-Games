@@ -1,5 +1,5 @@
-scenes.load = function(){};
-scenes.load.prototype = {
+scenes.tilemap = function(){};
+scenes.tilemap.prototype = {
 	preload: function(){
 		//LOAD tilemap and assets
 		game.load.tilemap('grassmap', 'assets/tilemaps/grassmap.json', null, Phaser.Tilemap.TILED_JSON);
@@ -15,7 +15,7 @@ scenes.load.prototype = {
 
 		addStateListeners();
 
-		game.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+		//game.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
 		game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 		game.world.setBounds(0,0,screen.width, screen.height);
 

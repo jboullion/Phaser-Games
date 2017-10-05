@@ -1,5 +1,5 @@
-scenes.idle = function(){};
-scenes.idle.prototype = {
+scenes.scenefive = function(){};
+scenes.scenefive.prototype = {
 	preload: function(){},
 	create: function(){
 		game.stage.backgroundColor = "#000033";

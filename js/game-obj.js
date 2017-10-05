@@ -9,20 +9,20 @@ screen.centerY = screen.height / 2;
 
 //setup scenes
 var scenes = {},
-	MENUKEY = Phaser.Keyboard.ONE,
-	LOADKEY = Phaser.Keyboard.TWO;
-	LVLKEY = Phaser.Keyboard.THREE,
-	FIGHTKEY = Phaser.Keyboard.FOUR,
-	IDLEKEY = Phaser.Keyboard.FIVE,
-	CHARKEY = Phaser.Keyboard.SIX,
+	FIGHTKEY = Phaser.Keyboard.ONE,
+	TILEMAPKEY = Phaser.Keyboard.TWO;
+	BULLETKEY = Phaser.Keyboard.THREE;
+	SCENEFOUR = Phaser.Keyboard.FOUR,
+	SCENEFIVE = Phaser.Keyboard.FIVE,
+	SCENESIX = Phaser.Keyboard.SIX,
 
 scenes.states = [];
-scenes.states[MENUKEY] ='menu';
-scenes.states[CHARKEY] ='characterSelect';
-scenes.states[LVLKEY] ='levelSelect';
 scenes.states[FIGHTKEY] ='fight';
-scenes.states[IDLEKEY] ='idle';
-scenes.states[LOADKEY] ='load';
+scenes.states[TILEMAPKEY] ='tilemap';
+scenes.states[BULLETKEY] ='bullets';
+scenes.states[SCENEFOUR] ='scenefour';
+scenes.states[SCENEFIVE] ='scenefive';
+scenes.states[SCENESIX] ='scenesix';
 
 //setup characters
 var characters = {};

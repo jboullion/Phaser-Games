@@ -1,5 +1,5 @@
-scenes.levelSelect = function(){};
-scenes.levelSelect.prototype = {
+scenes.scenesix = function(){};
+scenes.scenesix.prototype = {
 	preload: function(){},
 	create: function(){
 		game.stage.backgroundColor = "#003300";
