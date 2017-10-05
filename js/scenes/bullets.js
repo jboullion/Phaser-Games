@@ -4,7 +4,10 @@ var barrel = null,
 	bullets = null,
 	bullet_velocity = 1000,
 	nextFire = 0, //next game.time to fire at
-	bulletRate = 100; //millisecond delay on bullet shots
+	bulletRate = 100, //millisecond delay on bullet shots
+	largeEnemy = {},
+	enemyGroup = null,
+	bullet = null;
 
 scenes.bullets.prototype = {
 	init: function() {
@@ -15,6 +18,7 @@ scenes.bullets.prototype = {
 		game.load.image('cannon_base', 'assets/sprites/cannon_base.png');
 		game.load.image('cannon_barrel', 'assets/sprites/cannon_barrel.png');
 		game.load.image('bullet', 'assets/sprites/bullet.png');
+		game.load.image('dude', 'assets/sprites/dude.png');
 	},
 	create: function(){
 		game.stage.backgroundColor = "#006666";
@@ -50,6 +54,23 @@ scenes.bullets.prototype = {
 		barrel = game.add.sprite(screen.centerX,screen.centerY, 'cannon_barrel');
 		barrel.anchor.setTo(0.3, 0.5);
 
+		largeEnemy.sprite = game.add.sprite(screen.centerX / 2, screen.centerY, 'dude');
+		largeEnemy.sprite.anchor.setTo(0.5, 0.5);
+		game.physics.enable(largeEnemy.sprite);
+
+		enemyGroup = game.add.group();
+		enemyGroup.enableBody = true;
+		enemyGroup.physicsBodyType = Phaser.Physics.ARCADE;
+
+		//create our enemies!
+		for(var i = 0; i < 10; i++){
+			enemyGroup.create(getRandomInt(50,screen.width - 75), getRandomInt(50,screen.height - 75), 'dude');
+		}
+
+		enemyGroup.setAll('anchor.x', 0.5);
+		enemyGroup.setAll('anchor.y', 0.5);
+		enemyGroup.setAll('scale.x', 0.5);
+		enemyGroup.setAll('scale.y', 0.5);
 	},
 	update: function(){
 		barrel.rotation = game.physics.arcade.angleToPointer(barrel);
@@ -57,18 +78,28 @@ scenes.bullets.prototype = {
 		if(game.input.activePointer.isDown){
 			this.fire();
 		}
+
+		game.physics.arcade.overlap(bullets, largeEnemy.sprite, this.hitEnemy);
+		game.physics.arcade.overlap(bullets, enemyGroup, this.hitGroup);
 	},
 	fire: function(){
 		if(game.time.now > nextFire){
 			nextFire = game.time.now + bulletRate;
 
-			var bullet = bullets.getFirstDead();
+			bullet = bullets.getFirstDead();
 			bullet.reset(barrel.x, barrel.y);
-
 
 			game.physics.arcade.moveToPointer(bullet, bullet_velocity);
 			bullet.rotation = game.physics.arcade.angleToPointer(bullet);
 		}
+	},
+	hitEnemy: function(){
+		largeEnemy.sprite.kill();
+		bullet.kill();
+	},
+	hitGroup: function(b,e){
+		e.kill();
+		b.kill();
 	},
 	render: function() {
 	  //var debug;
