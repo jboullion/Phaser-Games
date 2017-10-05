@@ -23,6 +23,8 @@ scenes.bullets.prototype = {
 	create: function(){
 		game.stage.backgroundColor = "#006666";
 		addStateListeners();
+		game.physics.startSystem(Phaser.Physics.ARCADE);
+		game.physics.arcade.gravity.y = 0;
 
 		//SETTING UP THE DEBUG PLUGIN. THIS WILL RUN ON ALL SCENES
 		game.debug.font = "24px monospace";
@@ -100,6 +102,12 @@ scenes.bullets.prototype = {
 	hitGroup: function(b,e){
 		e.kill();
 		b.kill();
+		enemyGroup.create(getRandomInt(50,screen.width - 75), getRandomInt(50,screen.height - 75), 'dude');
+
+		enemyGroup.setAll('anchor.x', 0.5);
+		enemyGroup.setAll('anchor.y', 0.5);
+		enemyGroup.setAll('scale.x', 0.5);
+		enemyGroup.setAll('scale.y', 0.5);
 	},
 	render: function() {
 	  //var debug;
