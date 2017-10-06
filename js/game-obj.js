@@ -12,17 +12,17 @@ var scenes = {},
 	FIGHTKEY = Phaser.Keyboard.ONE,
 	TILEMAPKEY = Phaser.Keyboard.TWO;
 	BULLETKEY = Phaser.Keyboard.THREE;
-	SCENEFOUR = Phaser.Keyboard.FOUR,
-	SCENEFIVE = Phaser.Keyboard.FIVE,
-	SCENESIX = Phaser.Keyboard.SIX,
+	BUTTONKEY = Phaser.Keyboard.FOUR,
+	TWEENKEY = Phaser.Keyboard.FIVE,
+	PLATFORMKEY = Phaser.Keyboard.SIX,
 
 scenes.states = [];
 scenes.states[FIGHTKEY] ='fight';
 scenes.states[TILEMAPKEY] ='tilemap';
 scenes.states[BULLETKEY] ='bullets';
-scenes.states[SCENEFOUR] ='scenefour';
-scenes.states[SCENEFIVE] ='scenefive';
-scenes.states[SCENESIX] ='scenesix';
+scenes.states[BUTTONKEY] ='buttons';
+scenes.states[TWEENKEY] ='tweens';
+scenes.states[PLATFORMKEY] ='platforms';
 
 //setup characters
 var characters = {};
@@ -31,7 +31,8 @@ characters.dude.sprite = null;
 characters.dude.speed = 6;
 characters.dude.isJumping = false;
 characters.dude.jumpTimer = 0;
-characters.dude.tilespeed = 500;
+characters.dude.tilemap = 300;
+characters.dude.velocity = 350;
 
 var playerOne = null;
 
@@ -43,6 +44,17 @@ function debugLog(data){
     if(DEBUG !== 1) return false;
 
 	console.log(data);
+}
+
+/**
+ * Setup the state listeners to move between the states on keypress
+ */
+function addStateListeners(){
+	if(DEBUG !== 1) return false;
+
+	for(var s in scenes.states){
+		addKeyCallback(s, changeState, s);
+	}
 }
 
 /**
@@ -60,16 +72,7 @@ function addKeyCallback(key, fn, args){
 	game.input.keyboard.addKey(key).onDown.add(fn, null, null, args);
 }
 
-/**
- * Setup the state listeners to move between the states
- */
-function addStateListeners(){
-	if(DEBUG !== 1) return false;
 
-	for(var s in scenes.states){
-		addKeyCallback(s, changeState, s);
-	}
-}
 
 function getRandomInt(min,max)
 {

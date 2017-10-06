@@ -10,8 +10,6 @@ scenes.fight.prototype = {
 		game.physics.startSystem(Phaser.Physics.ARCADE);
 		game.physics.arcade.gravity.y = 2000;
 
-		playerOne = characters.dude;
-
 		addStateListeners();
 
 		//force the game to fit all scales
@@ -22,6 +20,7 @@ scenes.fight.prototype = {
 		//add background
 		var background = game.add.sprite(0,0, 'background');
 
+		playerOne = characters.dude;
 		//setup our dude
 		playerOne.sprite = game.add.sprite(screen.centerX / 2,screen.centerY + (screen.centerY/2), 'dude');
 		//center him on screen

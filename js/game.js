@@ -1,18 +1,10 @@
 var game = new Phaser.Game(screen.width,screen.height,Phaser.AUTO);
 
-game.state.add('fight', scenes.fight);
-game.state.add('tilemap', scenes.tilemap);
-game.state.add('bullets', scenes.bullets);
-game.state.add('scenefour', scenes.scenefour);
-game.state.add('scenefive', scenes.scenefive);
-game.state.add('scenesix', scenes.scenesix);
+game.state.add(scenes.states[FIGHTKEY], scenes.fight);
+game.state.add(scenes.states[TILEMAPKEY], scenes.tilemap);
+game.state.add(scenes.states[BULLETKEY], scenes.bullets);
+game.state.add(scenes.states[BUTTONKEY], scenes.buttons);
+game.state.add(scenes.states[TWEENKEY], scenes.tweens);
+game.state.add(scenes.states[PLATFORMKEY], scenes.platforms);
 
-
-scenes.states[FIGHTKEY] ='fight';
-scenes.states[TILEMAPKEY] ='tilemap';
-scenes.states[BULLETKEY] ='bullets';
-scenes.states[SCENEFOUR] ='scenefour';
-scenes.states[SCENEFIVE] ='scenefive';
-scenes.states[SCENESIX] ='scenesix';
-
-game.state.start('bullets');
+game.state.start(scenes.states[PLATFORMKEY]);

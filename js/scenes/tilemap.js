@@ -58,13 +58,13 @@ scenes.tilemap.prototype = {
 
 		if(game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)){
 			//playerOne.sprite.x += playerOne.speed;
-			playerOne.sprite.body.velocity.x = playerOne.tilespeed;
+			playerOne.sprite.body.velocity.x = playerOne.tilemap;
 			//turn around when walking
 			playerOne.sprite.scale.setTo(0.5, 0.5);
 			//walk
 			playerOne.sprite.animations.play('walk', 12, true);
 		}else if(game.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
-			playerOne.sprite.body.velocity.x = -playerOne.tilespeed;
+			playerOne.sprite.body.velocity.x = -playerOne.tilemap;
 			//turn around when walking
 			playerOne.sprite.scale.setTo(-0.5, 0.5);
 			playerOne.sprite.animations.play('walk', 12, true);
@@ -73,13 +73,13 @@ scenes.tilemap.prototype = {
 		}
 
 		if(game.input.keyboard.isDown(Phaser.Keyboard.UP)){
-			playerOne.sprite.body.velocity.y = -playerOne.tilespeed;
+			playerOne.sprite.body.velocity.y = -playerOne.tilemap;
 			//turn around when walking
 			playerOne.sprite.scale.setTo(0.5, 0.5);
 			//walk
 			playerOne.sprite.animations.play('walk', 12, true);
 		}else if(game.input.keyboard.isDown(Phaser.Keyboard.DOWN)){
-			playerOne.sprite.body.velocity.y = playerOne.tilespeed;
+			playerOne.sprite.body.velocity.y = playerOne.tilemap;
 			//turn around when walking
 			playerOne.sprite.scale.setTo(-0.5, 0.5);
 			playerOne.sprite.animations.play('walk', 12, true);
