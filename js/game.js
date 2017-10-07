@@ -8,5 +8,6 @@ game.state.add(scenes.states[TWEENKEY], scenes.tweens);
 game.state.add(scenes.states[PLATFORMKEY], scenes.platforms);
 game.state.add(scenes.states[PARTICLEKEY], scenes.particles);
 game.state.add(scenes.states[SWIPEKEY], scenes.swipe);
+game.state.add(scenes.states[TEXTKEY], scenes.text);
 
-game.state.start(scenes.states[SWIPEKEY]);
+game.state.start(scenes.states[TEXTKEY]);
