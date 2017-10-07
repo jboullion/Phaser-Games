@@ -12,6 +12,9 @@ scenes.tweens.prototype = {
 
 		game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
+		var sceneDescription = "Tween playground";
+		game.add.text( 50,50, sceneDescription,{fontSize: '30px', fill: '#fff' });
+
 		var tweeners = [];
 
 		for(var i = 0; i < 5; i++){

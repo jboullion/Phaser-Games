@@ -26,6 +26,9 @@ scenes.bullets.prototype = {
 		game.physics.startSystem(Phaser.Physics.ARCADE);
 		game.physics.arcade.gravity.y = 0;
 
+		var sceneDescription = "Shoot bullets at dudes by clicking with the mouse!";
+		game.add.text( 50,25, sceneDescription,{fontSize: '30px', fill: '#000' });
+
 		//SETTING UP THE DEBUG PLUGIN. THIS WILL RUN ON ALL SCENES
 		game.debug.font = "24px monospace";
 		game.debug.lineHeight = 20;

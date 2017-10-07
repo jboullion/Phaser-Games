@@ -23,13 +23,16 @@ scenes.highscore.prototype = {
 	create: function(){
 		game.stage.backgroundColor = "#eeccdd";
 		addStateListeners();
-		game.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+		game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
-		//firebase = new Firebase('https://phasertutorials.firebaseio.com/');
+		var sceneDescription = "Connect to Firebase database and update the highscore whenever \n the database is updated.";
+		game.add.text( 50,25, sceneDescription,{fontSize: '30px', fill: '#000' });
+
 		database = firebase.database();
 		var databaseReference = database.ref('highscores');
 
 		/*
+		//Change the high scores
 		var score = 100;
 		for(var i = 0; i < highScores.length; i++){
 			score -= getRandomInt(5,10);
@@ -38,15 +41,15 @@ scenes.highscore.prototype = {
 		database.ref('highscores').set({
 		    highscores: highScores
 		  });
-*/
+		*/
 		for(var i = 1; i < 10; i++){
 			//Display the numbers 1 through 10 and make sure the have an anchor that draw them starting from the right
-			game.add.text(500, 20 + (i * 50), i+'. ', {fontSize: '40px'}).anchor.setTo(1,0);
+			game.add.text(500, 100 + (i * 50), i+'. ', {fontSize: '40px'}).anchor.setTo(1,0);
 		}
 
 		for(var i = 0; i < 10; i++){
 			//Display the numbers 1 through 10 and make sure the have an anchor that draw them starting from the right
-			highScoreText[i] = game.add.text(500, 20 + ((i+1) * 50), highScores[i], {fontSize: '40px'});
+			highScoreText[i] = game.add.text(500, 100 + ((i+1) * 50), highScores[i], {fontSize: '40px'});
 		}
 
 		//give a reference to our states updateHighScores function

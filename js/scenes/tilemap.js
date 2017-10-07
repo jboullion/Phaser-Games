@@ -32,6 +32,9 @@ scenes.tilemap.prototype = {
 		terrain.road = map.createLayer('road');
 		terrain.rocks = map.createLayer('rocks');
 
+		var sceneDescription = "Use a tile map and collide with the rock layer.";
+		game.add.text( 50,50, sceneDescription,{fontSize: '30px', fill: '#fff' });
+
 		map.setCollisionBetween(5,22, true, 'rocks');
 
 		playerOne = characters.dude;

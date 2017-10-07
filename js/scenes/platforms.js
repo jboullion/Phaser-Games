@@ -11,11 +11,12 @@ scenes.platforms.prototype = {
 	create: function(){
 		game.stage.backgroundColor = "#003300";
 		addStateListeners();
-
 		game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-
 		game.load.image('background', 'assets/backgrounds/background1.png');
 		var background = game.add.sprite(0,0, 'background');
+
+		var sceneDescription = "Generate some collidable platforms";
+		game.add.text( 50,50, sceneDescription,{fontSize: '30px', fill: '#fff' });
 
 		game.world.setBounds(0,0,background.width, background.height-100);
 

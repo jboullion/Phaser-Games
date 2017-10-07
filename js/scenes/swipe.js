@@ -12,7 +12,10 @@ scenes.swipe.prototype = {
 	create: function(){
 		game.stage.backgroundColor = "#113399";
 		addStateListeners();
-		game.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+		game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+
+		var sceneDescription = "Track the swipe direction of the input.";
+		game.add.text( 50,50, sceneDescription,{fontSize: '30px', fill: '#fff' });
 
 		arrow = game.add.sprite(screen.centerX,screen.centerY, 'arrow');
 		arrow.anchor.setTo(0.5,0.5);
@@ -67,6 +70,6 @@ scenes.swipe.prototype = {
 		}
 */
 		arrow.angle = direction;
-		console.log(arrow.angle);
+		//console.log(arrow.angle);
 	}
 }

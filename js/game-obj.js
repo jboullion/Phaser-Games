@@ -18,7 +18,7 @@ var scenes = {},
 	PARTICLEKEY = Phaser.Keyboard.SEVEN,
 	SWIPEKEY = Phaser.Keyboard.EIGHT,
 	TEXTKEY = Phaser.Keyboard.NINE,
-	SCOREKEY = Phaser.Keyboard.TEN;
+	SCOREKEY = Phaser.Keyboard.ZERO;
 
 scenes.states = [];
 scenes.states[FIGHTKEY] ='fight';

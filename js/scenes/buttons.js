@@ -12,8 +12,11 @@ scenes.buttons.prototype = {
 		game.load.audio('button_sound', 'assets/sounds/quick_button.wav');
 	},
 	create: function(){
-		game.stage.backgroundColor = "#333300";
+		game.stage.backgroundColor = "#666600";
 		addStateListeners();
+
+		var sceneDescription = "Show and interact with buttons";
+		game.add.text( 50,25, sceneDescription,{fontSize: '30px', fill: '#000' });
 
 		//game.physics.startSystem(Phaser.Physics.ARCADE);
 		game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;

@@ -12,6 +12,9 @@ scenes.particles.prototype = {
 		game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 		game.physics.startSystem(Phaser.Physics.ARCADE);
 
+		var sceneDescription = "emite some particles and have them interact";
+		game.add.text( 50,50, sceneDescription,{fontSize: '30px', fill: '#000' });
+
 		//SETTING UP THE DEBUG PLUGIN. THIS WILL RUN ON ALL SCENES
 		game.debug.font = "24px monospace";
 		game.debug.lineHeight = 20;
