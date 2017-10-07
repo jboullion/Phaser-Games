@@ -30,12 +30,14 @@ scenes.particles.prototype = {
 		rightEmitter = game.add.emitter(screen.width, screen.centerY, 500);
 
 		leftEmitter.bounce.setTo(0.5, 0.5);
-		leftEmitter.setXSpeed(400, 600);
-	    leftEmitter.setYSpeed(-50, 50);
+		leftEmitter.maxParticleSpeed.set(600,-50);
+		//leftEmitter.setXSpeed(400, 600);
+	    //leftEmitter.setYSpeed(-50, 50);
 		leftEmitter.makeParticles('particles', 0, 1000, false, true);
 
 
 	    rightEmitter.bounce.setTo(0.5, 0.5);
+		//rightEmitter.maxParticleSpeed.set(-600,-50);
 	    rightEmitter.setXSpeed(-400, -600);
 	    rightEmitter.setYSpeed(-50, 50);
 	    rightEmitter.makeParticles('particles', 1, 1000, false, true);
