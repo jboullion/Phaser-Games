@@ -15,6 +15,7 @@ var scenes = {},
 	BUTTONKEY = Phaser.Keyboard.FOUR,
 	TWEENKEY = Phaser.Keyboard.FIVE,
 	PLATFORMKEY = Phaser.Keyboard.SIX,
+	PARTICLEKEY = Phaser.Keyboard.SEVEN;
 
 scenes.states = [];
 scenes.states[FIGHTKEY] ='fight';
@@ -23,6 +24,7 @@ scenes.states[BULLETKEY] ='bullets';
 scenes.states[BUTTONKEY] ='buttons';
 scenes.states[TWEENKEY] ='tweens';
 scenes.states[PLATFORMKEY] ='platforms';
+scenes.states[PARTICLEKEY] ='particles';
 
 //setup characters
 var characters = {};

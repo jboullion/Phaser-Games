@@ -6,5 +6,6 @@ game.state.add(scenes.states[BULLETKEY], scenes.bullets);
 game.state.add(scenes.states[BUTTONKEY], scenes.buttons);
 game.state.add(scenes.states[TWEENKEY], scenes.tweens);
 game.state.add(scenes.states[PLATFORMKEY], scenes.platforms);
+game.state.add(scenes.states[PARTICLEKEY], scenes.particles);
 
-game.state.start(scenes.states[PLATFORMKEY]);
+game.state.start(scenes.states[PARTICLEKEY]);
