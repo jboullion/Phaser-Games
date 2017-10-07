@@ -17,7 +17,8 @@ var scenes = {},
 	PLATFORMKEY = Phaser.Keyboard.SIX,
 	PARTICLEKEY = Phaser.Keyboard.SEVEN,
 	SWIPEKEY = Phaser.Keyboard.EIGHT,
-	TEXTKEY = Phaser.Keyboard.NINE;
+	TEXTKEY = Phaser.Keyboard.NINE,
+	SCOREKEY = Phaser.Keyboard.TEN;
 
 scenes.states = [];
 scenes.states[FIGHTKEY] ='fight';
@@ -29,6 +30,7 @@ scenes.states[PLATFORMKEY] ='platforms';
 scenes.states[PARTICLEKEY] ='particles';
 scenes.states[SWIPEKEY] ='swipe';
 scenes.states[TEXTKEY] ='text';
+scenes.states[SCOREKEY] ='highscore';
 
 //setup characters
 var characters = {};
