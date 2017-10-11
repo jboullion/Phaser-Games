@@ -41,6 +41,7 @@ characters.dude.isJumping = false;
 characters.dude.jumpTimer = 0;
 characters.dude.tilemap = 300;
 characters.dude.velocity = 350;
+characters.dude.velocity = 350;
 
 var playerOne = null;
 

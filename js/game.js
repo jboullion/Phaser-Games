@@ -11,4 +11,5 @@ game.state.add(scenes.states[SWIPEKEY], scenes.swipe);
 game.state.add(scenes.states[TEXTKEY], scenes.text);
 game.state.add(scenes.states[SCOREKEY], scenes.highscore);
 
-game.state.start(scenes.states[SCOREKEY]);
+//START the first scene
+game.state.start(scenes.states[FIGHTKEY]);
